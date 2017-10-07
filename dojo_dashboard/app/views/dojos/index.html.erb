@@ -11,6 +11,7 @@
 			<th>Street</th>
 			<th>City</th>
 			<th>State</th>
+			<th>Actions</th>
 		</tr>
 		<% @dojos.each do |dojo|%>
 		<tr>
@@ -18,9 +19,19 @@
 			<td><p><%= dojo.street %></p></td>
 			<td><p><%= dojo.city %></p></td>
 			<td><p><%= dojo.state %></p></td>
+			<td><nav>
+				<a href="/dojos/<%= dojo.id %>">Show</a>
+				<a href="/dojos/<%= dojo.id %>/edit">Edit</a>
+				<form action="/dojos/<%= dojo.id %>" method="post">
+					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+					<input type="hidden" name="_method" value="delete">
+					<input type="submit" name="submit" value="Destroy">
+				</form>
+			</nav></td>
 		</tr>
 		<% end %>
 	</table>
+	<a href="/dojos/new">New Dojo</a>
 
 </body>
 </html>

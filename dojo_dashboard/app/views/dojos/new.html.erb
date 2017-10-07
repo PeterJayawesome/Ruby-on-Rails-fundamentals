@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Dojo</title>
+</head>
+<body>
+	<h2>New Dojo</h2>
+	<form action="/dojos" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<label>Branch:</label>
+		<input type="text" name="dojo[branch]"><br>
+		<label>Street:</label>
+		<input type="text" name="dojo[street]"><br>
+		<label>City:</label>
+		<input type="text" name="dojo[city]"><br>
+		<label>State:</label>
+		<input type="text" name="dojo[state]"><br>
+		<input type="submit" value="Create">
+	</form>
+	<a href="/dojos">Go Back</a>
+</body>
+</html>
