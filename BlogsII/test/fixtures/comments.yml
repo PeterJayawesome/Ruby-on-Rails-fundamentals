@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comments: MyString
+  leaved_to_id: 
+  leaved_to_type: Leaved to
+  user_id: 
+
+two:
+  comments: MyString
+  leaved_to_id: 
+  leaved_to_type: Leaved to
+  user_id: 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey form</title>
+</head>
+<body>
+	<form action="/" method="post">
+		<input type="hidden" name="authenticity_token" value="form_authenticity_token">
+		<label>Your Name:</label>
+		<input type="text" name="name"><br>
+		<label>Dojo Location:</label>
+		<select name="location">
+			<option>Mountain View</option>
+			<option>Seattle</option>
+			<option>LA</option>
+			<option>New York</option>
+		</select><br>
+		<label>Favorite Language:</label>
+		<select name="language">
+			<option>Javascript</option>
+			<option>Python</option>
+			<option>Ruby</option>
+			<option>PHP</option>
+		</select>
+		<p>Comment(optional):</p>
+		<textarea name="comment"></textarea><br>
+		<input type="submit" name="submit">
+
+	</form>
+
+</body>
+</html>

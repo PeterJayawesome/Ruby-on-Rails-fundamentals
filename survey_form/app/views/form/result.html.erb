@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+</head>
+<body>
+	<table>
+		<h3>Submitted information</h3>
+		<tr>
+			<td>Name:</td>
+			<td><%= session[:result]["name"] %></td>
+		</tr>
+		<tr>
+			<td>Dojo Location:</td>
+			<td><%= session[:result]["location"] %></td>
+		</tr>
+		<tr>
+			<td>Favorite Language:</td>
+			<td><%= session[:result]["language"] %></td>
+		</tr>
+		<tr>
+			<td>Comment:</td>
+			<td><%= session[:result]["comment"] %></td>
+		</tr>
+	</table>
+	<form action="/" method="get">
+		<input type="submit" name="submit">
+	</form>
+
+</body>
+</html>
