@@ -22,11 +22,7 @@
 			<td><nav>
 				<a href="/dojos/<%= dojo.id %>">Show</a>
 				<a href="/dojos/<%= dojo.id %>/edit">Edit</a>
-				<form action="/dojos/<%= dojo.id %>" method="post">
-					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-					<input type="hidden" name="_method" value="delete">
-					<input type="submit" name="submit" value="Destroy">
-				</form>
+				<a href="dojos/<%= dojo.id %>" data-method="delete">Delete</a>
 			</nav></td>
 		</tr>
 		<% end %>

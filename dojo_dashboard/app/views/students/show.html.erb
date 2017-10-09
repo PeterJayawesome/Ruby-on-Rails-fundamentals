@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show Student</title>
+</head>
+<body>
+	<h2><%=@dojo.branch%>'s <%= @student.first_name %> <%= @student.last_name%></h2>
+	<p>Email: <%= @student.email %></p>
+	<h4>Cohort</h4>
+	<table>
+		<tr>
+			<th><p>First Name</p></th>
+			<th><p>Last Name</p></th>
+			<th><p>Email</p></th>
+		</tr>
+		<tr>
+			<td><p><%= @student.first_name %></p></td>
+			<td><p><%= @student.last_name %></p></td>
+			<td><p><%= @student.email %></p></td>
+		</tr>
+	</table>
+	<a href="/dojos">Home</a>
+	<a href="/dojos/<%=@dojo.id%>/students/<%=@student.id%>/edit">Edit</a>
+</body>
+</html>
