@@ -1,0 +1,19 @@
+<%= form_for(@user) do |user| %>
+	<h1>New User</h1>
+	<form action="/users" method="post">
+		<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+		<div class="field">
+			<strong><%= user.label :first_name%></strong><br>
+			<input type="text" name="user[first_name]" style="width: 90%">
+		</div>
+		<div class="field">
+			<strong><%= user.label :last_name%></strong><br>
+			<input type="text" name="user[last_name]" style="width: 90%">
+		</div>
+		<div class="field">
+			<strong><%= user.label :favorite_language%></strong><br>
+			<input type="text" name="user[favorite_language]" style="width: 90%">
+		</div>
+		<input type="submit" name="submit" value="submit" class="btn btn-primary" style="margin-top: 10px">
+	</form>
+<%end%>

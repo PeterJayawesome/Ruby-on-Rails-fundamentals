@@ -1,0 +1,23 @@
+<%= form_for(@post) do |post| %>
+	<h1>New Posts</h1>
+	<form action="/posts" method="post">
+		<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+		<div class="field">
+			<strong><%= post.label :title%></strong><br>
+			<input type="text" name="post[title]" style="width: 90%">
+		</div>
+		<div class="field">
+			<strong><%= post.label :content%></strong><br>
+			<input type="text" name="post[content]" style="width: 90%">
+		</div>
+		<div class="field">
+			<strong><%= post.label :author%></strong><br>
+			<select name="post[author]">
+				<% @users.each do |user| %>
+					<option value="user.id"><%=user.first_name%> <%=user.last_name%></option>
+				<%end%>
+			</select>
+		</div>
+		<input type="submit" name="submit" value="submit" class="btn btn-primary" style="margin-top: 10px">
+	</form>
+<%end%>

@@ -1,0 +1,37 @@
+<p>Welcome, <%=@user.username%></p>
+<a href="/users/new">Log out</a>
+<% if flash[:notices] %>
+	<ul>
+	<% flash[:notices].each do |notice| %>
+		<li><%=notice%></li>
+	<%end%>
+	</ul>
+<%end%>
+<form action="/messages" method="post">
+	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+	<textarea name="message_content"></textarea><br>
+	<input type="submit" value="Post a Message">
+</form>
+
+<% if @messages %>
+	<% @messages.each do |message| %>
+		<div class="message">
+			<p><%= message.username %>-<%= message.create_at %></p>
+			<p style="margin-left:5px"><%=message.content%></p>
+		</div>
+		<%if !message.comments.empty? %>
+		<h2>Comments:</h2>
+		<div class="comments">
+			<% @comments["#{message.id}"].each do |comment|%>
+				<p><%=comment.username%> - <%=comment.create_at%></p>
+				<p><%=comment.content%></p>
+			<%end%>
+		</div>
+		<%end%>
+		<form action="/messages/<%=message.id%>" method="post">
+			<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+			<textarea name="content"></textarea><br>
+			<input type="submit" value="Post a Comment">
+		</form>
+	<%end%>
+<%end%>
